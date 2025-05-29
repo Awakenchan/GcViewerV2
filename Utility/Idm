@@ -83,12 +83,19 @@ end
 local Lib = {}
 
 Lib.CheckMouseInGui = function(gui)
-	if gui == nil then return false end
-	local guiPosition = gui.AbsolutePosition
-	local guiSize = gui.AbsoluteSize	
+	if not gui or not gui:IsA("GuiObject") then
+		return false
+	end
+	local mousePos = UserInputService:GetMouseLocation()
+	local guiPos = gui.AbsolutePosition
+	local guiSize = gui.AbsoluteSize
+	local topbarHeight = 36 
+	mousePos = Vector2.new(mousePos.X, mousePos.Y - topbarHeight)
 
-	return mouse.X >= guiPosition.X and mouse.X < guiPosition.X + guiSize.X and mouse.Y >= guiPosition.Y and mouse.Y < guiPosition.Y + guiSize.Y
+	return mousePos.X >= guiPos.X and mousePos.X <= guiPos.X + guiSize.X
+	   and mousePos.Y >= guiPos.Y and mousePos.Y <= guiPos.Y + guiSize.Y
 end
+
 
 Lib.Signal = (function()
 	local funcs = {}
