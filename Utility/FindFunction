@@ -1,0 +1,64 @@
+local FindFunc = {}
+function FindFunc:CheckConstants(func, totalConstants, expected)
+    assert(typeof(func) == "function", "First argument must be a function")
+    assert(typeof(totalConstants) == "number", "Second argument must be a number")
+    assert(typeof(expected) == "table", "Third argument must be a table")
+
+    local constants = debug.getconstants(func)
+    if not constants then
+        return false
+    end
+
+    if #constants ~= totalConstants then
+        return false
+    end
+
+    for index, expectedValue in next, expected do
+        local actualValue = constants[index]
+
+        if type(expectedValue) == "string" and expectedValue:match("^typeof:") then
+            local expectedType = expectedValue:sub(8)
+            if typeof(actualValue) ~= expectedType then
+                return false
+            end
+        else
+            if actualValue ~= expectedValue then
+                return false
+            end
+        end
+    end
+
+    return true
+end
+function FindFunc:CheckUpvalues(func, totalUpvalues, expected)
+    assert(typeof(func) == "function", "First argument must be a function")
+    assert(typeof(totalUpvalues) == "number", "Second argument must be a number")
+    assert(typeof(expected) == "table", "Third argument must be a table")
+
+    local count = debug.getupvalues(func)
+    if not count then
+        return false
+    end
+
+    if #count ~= totalUpvalues then
+        return false
+    end
+
+    for index, expectedValue in next, expected do
+        local actualValue = count[index]
+
+        if type(expectedValue) == "string" and expectedValue:match("^typeof:") then
+            local expectedType = expectedValue:sub(8)
+            if typeof(actualValue) ~= expectedType then
+                return false
+            end
+        else
+            if actualValue ~= expectedValue then
+                return false
+            end
+        end
+    end
+
+    return true
+end  
+return FindFunc
