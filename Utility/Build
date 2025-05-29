@@ -1,0 +1,13 @@
+return setmetatable({}, {
+    __index = function(_, key)
+        if key == "__version" then
+            return "Alpha 1.0"
+        elseif key == "__log" then
+            return {
+                "[+] Added Filtergc Support",
+                "[+] Rewrote Grab-Function",
+                "[-] Rewrote gc loops and all for loops"
+            }
+        end
+    end
+})
