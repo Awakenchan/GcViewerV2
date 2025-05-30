@@ -41,7 +41,7 @@ local Settings = {
 local Services = setmetatable({}, {
 	__index = function(self, Name: string)
 		local Service = game:GetService(Name)
-		return NewReference(Service)
+		return cloneref(Service)
 	end,
 })
 
