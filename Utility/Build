@@ -1,7 +1,7 @@
 return setmetatable({}, {
     __index = function(_, key)
         if key == "__version" then
-            return "Alpha 1.0"
+            return "Alpha version 1.5"
         elseif key == "__log" then
             return {
                 "[+] Added Filtergc Support",
