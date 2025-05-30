@@ -1,17 +1,12 @@
 return setmetatable({}, {
     __index = function(_, key)
         if key == "__version" then
-            return "2.1"
+            return "2.2"
         elseif key == "__log" then
             return {
-                "[+] Decompile Section",
-                "[+] Build checker",
-                "[+] Added Copy-Function info",
-                "[+] Added Copy-overview",
-                "[+] Function grabbing no longer errors",
-                "[=] Re-did function info logic",
-                "[=] Every Dumping should be fixed including ENV",
-                "[=] Closes all window properly if found duplicated ones",
+                "[/] Currently rewriting getscript() log",
+                "[/] Attempt to fix all issues",
+                "[/] Attempt to decrease fail to decompile",
             }
         end
     end
