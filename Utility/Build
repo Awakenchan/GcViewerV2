@@ -1,12 +1,13 @@
 return setmetatable({}, {
     __index = function(_, key)
         if key == "__version" then
-            return "Alpha version 1.5"
+            return "Beta 1.0"
         elseif key == "__log" then
             return {
-                "[+] Added Filtergc Support",
-                "[+] Rewrote Grab-Function",
-                "[-] Rewrote gc loops and all for loops"
+                "[+] Decompile Section",
+                "[+] Build checker",
+                "[=] Re-did function info logic",
+                "[+] Added Copy-Function info"
             }
         end
     end
