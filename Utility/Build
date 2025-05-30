@@ -10,7 +10,7 @@ return setmetatable({}, {
                 "[+] Added Copy-overview",
                 "[+] Function grabbing no longer errors"
                 "[=] Re-did function info logic",
-                "[=] Every Dumping should be fixed including ENV"
+                "[=] Every Dumping should be fixed including ENV",
             }
         end
     end
