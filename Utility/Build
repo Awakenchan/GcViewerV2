@@ -1,13 +1,16 @@
 return setmetatable({}, {
     __index = function(_, key)
         if key == "__version" then
-            return "Beta 1.0"
+            return "2.0"
         elseif key == "__log" then
             return {
                 "[+] Decompile Section",
                 "[+] Build checker",
+                "[+] Added Copy-Function info",
+                "[+] Added Copy-overview",
+                "[+] Function grabbing no longer errors"
                 "[=] Re-did function info logic",
-                "[+] Added Copy-Function info"
+                "[=] Every Dumping should be fixed including ENV"
             }
         end
     end
