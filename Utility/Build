@@ -1,7 +1,7 @@
 return setmetatable({}, {
     __index = function(_, key)
         if key == "__version" then
-            return "2.0"
+            return "2.1"
         elseif key == "__log" then
             return {
                 "[+] Decompile Section",
@@ -11,6 +11,7 @@ return setmetatable({}, {
                 "[+] Function grabbing no longer errors",
                 "[=] Re-did function info logic",
                 "[=] Every Dumping should be fixed including ENV",
+                "[=] Closes all window properly if found duplicated ones",
             }
         end
     end
