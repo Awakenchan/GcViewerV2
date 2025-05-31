@@ -72,7 +72,7 @@ function FindFunc:GcLookUp(val, callback)
         end
     end
 end
-function FindFunc:GcLookUp(val, callback)
+function FindFunc.GcLookUp(val, callback)
     for i, v in next, getgc(val and true or nil) do
         if typeof(v) == "function" and islclosure(v) and not isexecutorclosure(v) then
             if callback then
