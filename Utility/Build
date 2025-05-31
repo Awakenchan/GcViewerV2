@@ -4,7 +4,7 @@ return setmetatable({}, {
             return "2.5"
         elseif key == "__log" then
             return {
-                "[+] Gc loops have been converted to a loadstring-based, unobfuscated runtime.".
+                "[+] Gc loops have been converted to a loadstring-based, unobfuscated runtime.",
                 "[+] Chunk loading as an option 'getgenv().DetectLargeFuncSource' ",
                 "[+] Local func calls are under pcall to avoid dtc",
                 "[/] 'soon' Save config & auto load config"
