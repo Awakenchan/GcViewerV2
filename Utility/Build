@@ -1,13 +1,11 @@
 return setmetatable({}, {
     __index = function(_, key)
         if key == "__version" then
-            return "2.5"
+            return "2.6"
         elseif key == "__log" then
             return {
-                "[+] Gc loops have been converted to a loadstring-based, unobfuscated runtime.",
-                "[+] Chunk loading as an option 'getgenv().DetectLargeFuncSource' ",
-                "[+] Local func calls are under pcall to avoid dtc",
-                "[/] 'soon' Save config & auto load config"
+                "[+] Added getscriptfromthread support (if your exe has it).",
+                "[+] Added Save config & auto load config."
             }
         end
     end
