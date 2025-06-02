@@ -1,11 +1,12 @@
 return setmetatable({}, {
     __index = function(_, key)
         if key == "__version" then
-            return "2.6"
+            return "2.6.1"
         elseif key == "__log" then
             return {
                 "[+] Added getscriptfromthread support (if your exe has it).",
-                "[+] Added Save config & auto load config."
+                "[+] Added Save config & auto load config.",
+                "[+] Added Adonis detector(bypasses if found)"
             }
         end
     end
