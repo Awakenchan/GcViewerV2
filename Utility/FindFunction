@@ -83,4 +83,15 @@ function FindFunc.GcLookUp(val, callback)
         end
     end
 end
+function FindFunc.getscriptfromthread(script)
+    if not getscriptfromthread then
+        return "Shit executor"
+    end
+    for i,v in next, getreg() do 
+	    if typeof(v) == "thread" and getscriptfromthread(v) == script then
+	      return getscriptfromthread(v)
+	    end
+    end
+end
+
 return FindFunc
