@@ -4,8 +4,7 @@ return setmetatable({}, {
             return "2.7"
         elseif key == "__log" then
             return {
-                "[+] Added actor support",
-                "[-] Removed adonis finder"
+                "[+] Reverted"
             }
         end
     end
