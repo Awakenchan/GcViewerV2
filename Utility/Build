@@ -1,7 +1,7 @@
 return setmetatable({}, {
     __index = function(_, key)
         if key == "__version" then
-            return "2.7"
+            return "2.8"
         elseif key == "__log" then
             return {
                 "[+] Fixed potassium issue",
