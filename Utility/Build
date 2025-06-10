@@ -4,7 +4,8 @@ return setmetatable({}, {
             return "2.7"
         elseif key == "__log" then
             return {
-                "[+] Reverted"
+                "[+] Fixed potassium issue",
+                "[/] Added my crypto address if yall wana support!"
             }
         end
     end
