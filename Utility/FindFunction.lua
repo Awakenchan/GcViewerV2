@@ -1,3 +1,7 @@
+--[[
+upvalue finding bugged atm fixing soon
+]]
+
 local FindFunc = {}
 function FindFunc:CheckConstants(func, totalConstants, expected)
     assert(typeof(func) == "function", "First argument must be a function")
