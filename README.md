@@ -1,7 +1,7 @@
 # GcViewerV2
 
 ## ⚡ Features
-
+- Docs > https://gcviewer.gitbook.io/gcviewer-docs
 - Clean Ui
 - Can constant dump, upvalue dump, env dumps 
 - Support both gc loop up and filtergc loop up
