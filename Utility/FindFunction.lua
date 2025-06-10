@@ -1,7 +1,3 @@
---[[
-upvalue finding bugged atm fixing soon
-]]
-
 local FindFunc = {}
 function FindFunc:CheckConstants(func, totalConstants, expected)
     assert(typeof(func) == "function", "First argument must be a function")
@@ -89,7 +85,7 @@ function FindFunc.GcLookUp(val, callback)
 end
 function FindFunc.getscriptfromthread(script)
     if not getscriptfromthread then
-        return "Shit executor"
+        return "Executor doesnt not support getscriptfromthread"
     end
     for i,v in next, getreg() do 
 	    if typeof(v) == "thread" and getscriptfromthread(v) == script then
@@ -97,5 +93,11 @@ function FindFunc.getscriptfromthread(script)
 	    end
     end
 end
+function FindFunc.getscriptfromfunction(f)
+    if not getscriptfromfunction then
+         return "Executor doesnt not support getscriptfromfunction"
+    end
+    return getscriptfromfunction(f)
+end
 
-return FindFunc
+return FindFunc      
