@@ -1,11 +1,11 @@
 return setmetatable({}, {
     __index = function(_, key)
         if key == "__version" then
-            return "3.1"
+            return "3.2"
         elseif key == "__log" then
             return {
-                "[/] Fixed erlc crashes",
-                "[/] Should be ud on all games."
+                "[+] Added error handler",
+                "[/] fixing few labels"
             }
         end
     end
