@@ -13,5 +13,6 @@ return setmetatable({}, {
                 "[/] Error handler on other stuff."
             }
         end
+        return nil 
     end
 })
