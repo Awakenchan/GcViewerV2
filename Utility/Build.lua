@@ -1,12 +1,11 @@
 return setmetatable({}, {
     __index = function(_, key)
         if key == "__version" then
-            return "4.3"
+            return "5.1"
         elseif key == "__log" then
             return {
-                "[+] Added Hide old function labels",
-                "[/] Fixed decompile crashes",
-                "[/] Fixed frequent crashes with decompile"
+                "[/] Fixed frequent crashes with decompile",
+                "[/] Improving it, maybe it will decompile more and more now"
             }
         end
         return nil 
