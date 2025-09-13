@@ -12,7 +12,7 @@
 Be carefull with mem spike detection anti cheats
 
 ```lua
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3d22b4e813df3a183ba0cd5c8311cfc0.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a7bf1d042a5757c984086fc4efa90c79.lua"))()
 ```
 <br/>
 
