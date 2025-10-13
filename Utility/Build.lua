@@ -1,11 +1,10 @@
 return setmetatable({}, {
     __index = function(_, key)
         if key == "__version" then
-            return "5.1"
+            return "5.2"
         elseif key == "__log" then
             return {
-                "[/] Fixed frequent crashes with decompile",
-                "[/] Improving it, maybe it will decompile more and more now"
+                "[+] Actor support"
             }
         end
         return nil 
