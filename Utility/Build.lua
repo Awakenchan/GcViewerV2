@@ -7,7 +7,7 @@ return setmetatable({}, {
                 "[/] fixed filtering for local script module script etc",
                 "[/] fixed coloring",
                 "[/] rewrote decompile scripts",
-                "[/] rewrote filtering"
+                "[/] rewrote filtering",
             }
         end
         return nil 
