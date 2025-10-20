@@ -4,10 +4,7 @@ return setmetatable({}, {
             return "5.3"
         elseif key == "__log" then
             return {
-                "[/] fixed filtering for local script module script etc",
-                "[/] fixed coloring",
-                "[/] rewrote decompile scripts",
-                "[/] rewrote filtering",
+                    "[/] Detection patching"
             }
         end
         return nil 
