@@ -61,7 +61,7 @@ function FindFunc:CheckUpvalues(func, totalUpvalues, expected)
 
     return true
 end
-function FindFunc:GcLookUp(val, callback)
+function FindFunc.GcLookUp(val, callback)
     local gcList = getgc(val and true or nil)
     for i, v in next, gcList do
         if callback then
@@ -71,6 +71,7 @@ function FindFunc:GcLookUp(val, callback)
         end
     end
 end
+
 function FindFunc.getscriptfromthread(script)
     if not getscriptfromthread then
         return "Executor doesnt not support getscriptfromthread"
@@ -88,4 +89,4 @@ function FindFunc.getscriptfromfunction(f)
     return getscriptfromfunction(f)
 end
 
-return FindFunc
+return FindFunc      
