@@ -71,18 +71,6 @@ function FindFunc:GcLookUp(val, callback)
         end
     end
 end
-
-function FindFunc.GcLookUp(val, callback)
-    for i, v in next, getgc(val and true or nil) do
-        if typeof(v) == "function" and islclosure(v) and not isexecutorclosure(v) then
-            if callback then
-                callback(i, v)
-            else
-                return v
-            end
-        end
-    end
-end
 function FindFunc.getscriptfromthread(script)
     if not getscriptfromthread then
         return "Executor doesnt not support getscriptfromthread"
