@@ -62,16 +62,16 @@ function FindFunc:CheckUpvalues(func, totalUpvalues, expected)
     return true
 end
 function FindFunc:GcLookUp(val, callback)
-    for i, v in next,getgc(val and true or nil) do
-        if typeof(v) == "function" and islclosure(v) and not isexecutorclosure(v) then
-            if callback then
-                callback(i, v)
-            else
-                warn("Found function:", v)
-            end
+    local gcList = getgc(val and true or nil)
+    for i, v in next, gcList do
+        if callback then
+            callback(i, v)
+        else
+            warn("Found GC value:", v)
         end
     end
 end
+
 function FindFunc.GcLookUp(val, callback)
     for i, v in next, getgc(val and true or nil) do
         if typeof(v) == "function" and islclosure(v) and not isexecutorclosure(v) then
@@ -100,4 +100,4 @@ function FindFunc.getscriptfromfunction(f)
     return getscriptfromfunction(f)
 end
 
-return FindFunc      
+return FindFunc
